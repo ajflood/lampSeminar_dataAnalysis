@@ -19,7 +19,9 @@ database = database.drop([0], axis=0)
 #converting the data to numbers from strings
 database["gauge_height"] = pandas.to_numeric(database["gauge_height"])
 database["discharge"] = pandas.to_numeric(database["discharge"])
-#print(database)
+database["datetime"] = pandas.to_datetime(database["datetime"])
+print(database)
+print(database.dtypes)
 
 ###showing some slicing and data selection
 #gauge_height_slice = database['gauge_height']
@@ -32,7 +34,9 @@ database["discharge"] = pandas.to_numeric(database["discharge"])
 #specific_date_by_matching_date = database.loc[database['datetime'] == '2019-03-01']
 ##print(specific_date_by_matching_date)
 
-
+##plotting examples
+database.plot(kind='hist', y='gauge_height', x='datetime')
+plt.show()
 
 
 
