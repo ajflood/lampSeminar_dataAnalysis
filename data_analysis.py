@@ -20,8 +20,8 @@ database = database.drop([0], axis=0)
 database["gauge_height"] = pandas.to_numeric(database["gauge_height"])
 database["discharge"] = pandas.to_numeric(database["discharge"])
 database["datetime"] = pandas.to_datetime(database["datetime"])
-print(database)
-print(database.dtypes)
+#print(database)
+#print(database.dtypes)
 
 ###showing some slicing and data selection
 #gauge_height_slice = database['gauge_height']
@@ -35,8 +35,20 @@ print(database.dtypes)
 ##print(specific_date_by_matching_date)
 
 ##plotting examples
-database.plot(kind='hist', y='gauge_height', x='datetime')
-plt.show()
+#histogram
+database.plot.hist(x='datetime', y='gauge_height')
+plt.savefig('histogram.png')
+plt.close('all')
+
+#scatter
+plt.scatter(database['datetime'], database['discharge'])
+plt.savefig('scatter_plot.png')
+plt.close('all')
+
+#line
+database.plot.line(x='datetime', y='discharge')
+plt.savefig('line_plot.png')
+plt.close('all')
 
 
 
