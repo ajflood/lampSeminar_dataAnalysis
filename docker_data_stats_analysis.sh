@@ -29,7 +29,7 @@ function build {
 
 function run {
 	docker run -it \
-			-v "$(pwd)":/data \
+			-v "$(pwd)":/code \
 			--user=$(id -u) \
 			--env="DISPLAY" \
 			--volume="/etc/group:/etc/group:ro" \
