@@ -17,4 +17,16 @@ database = database.drop(['75905_00065_30800_cd', '75906_00060_00003_cd', 'agenc
 database = database.drop([0], axis=0)
 #print(database)
 
+#showing some slicing and data selection
+gauge_height_slice = database['gauge_height']
+print(gauge_height_slice)
+multi_column_slice = database.loc[:, ['datetime', 'gauge_height']]
+print(multi_column_slice)
+
+specific_date_by_index = database.iloc[0]
+print(specific_date_by_index)
+specific_date_by_matching_date = database.loc[database['datetime'] == '2019-03-01']
+print(specific_date_by_matching_date)
+
+
 
