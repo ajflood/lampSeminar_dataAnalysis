@@ -50,5 +50,13 @@ database.plot.line(x='datetime', y='discharge')
 plt.savefig('line_plot.png')
 plt.close('all')
 
+#making a pretty plot
+database.plot.line(x='datetime', y='gauge_height', c='r')
+plt.ylim([0., 20.])
+plt.title('Some title for your plot')
+plt.xlabel('The x Axis')
+plt.ylabel('The y Axis')
+plt.savefig('pretty_plot.png')
+plt.close('all')
 
 
