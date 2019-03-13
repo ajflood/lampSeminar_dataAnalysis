@@ -34,33 +34,33 @@ database["datetime"] = pandas.to_datetime(database["datetime"])
 #specific_date_by_matching_date = database.loc[database['datetime'] == '2019-03-01']
 ##print(specific_date_by_matching_date)
 
-##plotting examples
-#histogram
-database.plot.hist(x='datetime', y='gauge_height')
-plt.savefig('histogram.png')
-plt.close('all')
+###plotting examples
+##histogram
+#database.plot.hist(x='datetime', y='gauge_height')
+#plt.savefig('histogram.png')
+#plt.close('all')
 
-#scatter
-plt.scatter(database['datetime'], database['discharge'])
-plt.savefig('scatter_plot.png')
-plt.close('all')
+##scatter
+#plt.scatter(database['datetime'], database['discharge'])
+#plt.savefig('scatter_plot.png')
+#plt.close('all')
 
-#line
-database.plot.line(x='datetime', y='discharge')
-plt.savefig('line_plot.png')
-plt.close('all')
+##line
+#database.plot.line(x='datetime', y='discharge')
+#plt.savefig('line_plot.png')
+#plt.close('all')
 
-#making a pretty plot
-ax1 = database.plot.line(x='datetime', y='gauge_height', c='r')
-ax2 = database.plot.line(x='datetime', y='discharge', c='b', secondary_y=True, ax=ax1)
-ax1.set_ylim([0., 20.])
-ax1.set_ylabel('The left y Axis')
-ax2.set_ylim(bottom=0.0)
-ax2.set_ylabel('The right y Axis')
-plt.title('Some title for your plot')
-plt.xlabel('The shared x Axis')
-plt.tight_layout()
-plt.savefig('pretty_plot.png')
-plt.close('all')
+##making a pretty plot
+#ax1 = database.plot.line(x='datetime', y='gauge_height', c='r')
+#ax2 = database.plot.line(x='datetime', y='discharge', c='b', secondary_y=True, ax=ax1)
+#ax1.set_ylim([0., 20.])
+#ax1.set_ylabel('The left y Axis')
+#ax2.set_ylim(bottom=0.0)
+#ax2.set_ylabel('The right y Axis')
+#plt.title('Some title for your plot')
+#plt.xlabel('The shared x Axis')
+#plt.tight_layout()
+#plt.savefig('pretty_plot.png')
+#plt.close('all')
 
 
